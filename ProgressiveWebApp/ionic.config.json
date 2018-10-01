@@ -1,0 +1,7 @@
+{
+  "name": "ProgressiveWebApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
