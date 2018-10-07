@@ -24,9 +24,10 @@ export class ContactProvider {
   }
 
   public getAll() {
-    let contacts: Contactlist[] = [];
-    this.storage.forEach((value: Contact, key: string, itrationNumber: Number) => {
-      let contact = new Contactlist();
+    let contacts: ContactList[] = [];
+
+    return this.storage.forEach((value: Contact, key: string, itrationNumber: Number) => {
+      let contact = new ContactList();
       contact.key = key;
       contact.contact = value;
       contacts.push(contact);
@@ -48,7 +49,7 @@ export class Contact{
   active: boolean;
 }
 
-export class Contactlist{
+export class ContactList{
  key: string;
  contact: Contact;
 }
