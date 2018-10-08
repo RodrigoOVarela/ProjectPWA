@@ -22,7 +22,7 @@ export class HomePage {
   }
 
   addContact(){
-    this.navCtrl.push(EditContactPage);
+    this.navCtrl.push('EditContactPage');
   }
 
   editContact(item: ContactList){
