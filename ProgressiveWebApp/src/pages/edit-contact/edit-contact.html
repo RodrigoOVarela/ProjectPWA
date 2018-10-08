@@ -1,13 +1,39 @@
 
 <ion-header>
-
   <ion-navbar>
-    <ion-title>contact</ion-title>
+    <ion-title>
+      Progressive Web App Example
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label stacked>Nome</ion-label>
+      <ion-put type="text" name="name" [(ngModel)]="model.name"></ion-put>
+    </ion-item>
+
+     <ion-item>
+      <ion-label stacked>Telefone</ion-label>
+      <ion-put type="text" name="phone" [(ngModel)]="model.phone"></ion-put>
+    </ion-item>
+
+     <ion-item>
+      <ion-label stacked>Nascimento</ion-label>
+      <ion-datetime displayFormat="DD/MM/YYYY" name="birth" [(ngModel)]="model.birth"></ion-put>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Ativo</ion-label>
+      <ion-checkbox name="active" [(ngModel)]="model.active"></ion-checkbox>
+    </ion-item>
+
+  </ion-list>
+
+  <button ion-button block (click)="save()">Salvar</button>
 
 </ion-content>
