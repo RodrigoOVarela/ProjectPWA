@@ -14,11 +14,11 @@ export class HomePage {
 
   }
 
-  ioncViewDidEnter(){
+  ionViewDidEnter(){
     this.contactProvider.getAll()
-        .then(results => {
-          this.contacts = results;
-        })
+        .then((result) => {
+          this.contacts = result;
+        });
   }
 
   addContact(){
