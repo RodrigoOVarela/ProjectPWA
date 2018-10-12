@@ -38,5 +38,7 @@ export class HomePage {
         this.toast.create({ message: 'Contato Removido Com Sucesso!', duration: 3000, position: 'botton'}).present();
       })
   }
+
+
    
 }
