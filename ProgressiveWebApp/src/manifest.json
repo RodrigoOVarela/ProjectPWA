@@ -1,6 +1,6 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Progressive Web App",
+  "short_name": "Pwa",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
