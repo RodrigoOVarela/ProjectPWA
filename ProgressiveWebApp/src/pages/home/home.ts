@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import { NavController, ToastController, AlertController, Button } from 'ionic-angular';
 import { ContactProvider, Contact, ContactList } from '../../providers/contact/contact';
 import { EditContactPage } from '../edit-contact/edit-contact';
+import { Network } from '@ionic-native/network';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +11,24 @@ import { EditContactPage } from '../edit-contact/edit-contact';
 export class HomePage {
   contacts: ContactList[];
 
-  constructor(public navCtrl: NavController, private contactProvider: ContactProvider, private toast: ToastController ) {
+  constructor(public navCtrl: NavController, private contactProvider: ContactProvider, 
+    private toast: ToastController, private network: Network, private alertCtrl: AlertController) {
+
+    this.network.onConnect().subscribe(()=>{
+      this.alertCtrl.create({
+        title: 'Alerta',
+        subTitle: 'Dispositivo conectado',
+        buttons: ['OK']
+      }).present();
+    });
+
+    this.network.onDisconnect().subscribe(()=>{
+      this.alertCtrl.create({
+        title: 'Alerta',
+        subTitle: 'Dispositivo sem conexão com internet',
+        buttons: ['OK']
+      }).present();
+    });
 
   }
 

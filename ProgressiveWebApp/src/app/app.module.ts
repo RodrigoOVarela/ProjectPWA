@@ -9,6 +9,7 @@ import { HomePage } from '../pages/home/home';
 import { ContactProvider } from '../providers/contact/contact';
 import { DatePipe } from '@angular/common';
 import { IonicStorageModule } from '@ionic/storage';
+import { Network } from '@ionic-native/network';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ContactProvider,
-    DatePipe
+    DatePipe,
+    Network
   ]
 })
 export class AppModule {}
