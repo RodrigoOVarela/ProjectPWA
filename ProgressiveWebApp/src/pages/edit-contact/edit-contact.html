@@ -10,30 +10,56 @@
 
 <ion-content padding>
 
-  <ion-list>
 
-    <ion-item>
-      <ion-label stacked>Nome</ion-label>
-      <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
-    </ion-item>
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-icon name="contact" item-left></ion-icon>
+        <h1>Contato</h1>
+      </ion-item>
+    </ion-card-header>
+  
+    <ion-list>
+      <ion-item>
+          <ion-icon name="contact" item-left></ion-icon>
+          <p>Nome</p>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+          <ion-icon name="call" item-left></ion-icon>
+          <p>Telefone</p>
+      </ion-item>
+       <ion-item>
+        <ion-input type="text" name="phone" [(ngModel)]="model.phone"></ion-input>
+      </ion-item>
 
-     <ion-item>
-      <ion-label stacked>Telefone</ion-label>
-      <ion-input type="text" name="phone" [(ngModel)]="model.phone"></ion-input>
-    </ion-item>
+      <ion-item>
+          <ion-icon name="at" item-left></ion-icon>
+          <p>Email</p>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="email" [(ngModel)]="model.email"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+          <ion-icon name="calendar" item-left></ion-icon>
+          <p>Nascimento</p>
+      </ion-item>
+       <ion-item>
+        <ion-datetime displayFormat="DD/MM/YYYY" name="birth" [(ngModel)]="model.birth"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Ativo</ion-label>
+        <ion-checkbox name="active" [(ngModel)]="model.active"></ion-checkbox>
+      </ion-item>
+  
+    </ion-list>
+  </ion-card>
 
-     <ion-item>
-      <ion-label stacked>Nascimento</ion-label>
-      <ion-datetime displayFormat="DD/MM/YYYY" name="birth" [(ngModel)]="model.birth"></ion-datetime>
-    </ion-item>
-
-    <ion-item>
-      <ion-label>Ativo</ion-label>
-      <ion-checkbox name="active" [(ngModel)]="model.active"></ion-checkbox>
-    </ion-item>
-
-  </ion-list>
-
-  <button ion-button block (click)="save()">Salvar</button>
+  <button ion-button color="dark" block (click)="save()">Salvar</button>
 
 </ion-content>

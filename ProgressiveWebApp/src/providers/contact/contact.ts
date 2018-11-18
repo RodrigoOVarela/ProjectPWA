@@ -44,6 +44,7 @@ export class ContactProvider {
 
 export class Contact{
   name: string;
+  email: string;
   phone: number;
   birth: Date;
   active: boolean;
