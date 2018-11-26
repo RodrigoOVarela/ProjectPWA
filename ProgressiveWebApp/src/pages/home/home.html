@@ -1,51 +1,72 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Progressive Web App Example
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <ion-title>
+        Progressive Web App Example
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let item of contacts" col-12 col-xl-2 col-lg-3 col-md-4>
+            <ion-card>
+              <ion-item>
+                <ion-avatar item-start>
+                    <img src="../../assets/imgs/perfil.png">
+                </ion-avatar>
+                <h2 text-capitalize>{{ item.contact.name }}</h2>
+              </ion-item>
 
-<ion-content padding>
- <ion-list>
-   <ion-card *ngFor="let item of contacts" [ngClass]="{'item-inactive': !item.contact.active }">
+              <ion-card-content >
+                  <ion-item>
+                      <ion-icon name="call" item-left></ion-icon>
+                      <p>{{ item.contact.phone }}</p>
+                  </ion-item>
+                  <ion-item>
+                      <ion-icon name="calendar" item-left></ion-icon>
+                      <p>{{ item.contact.birth | date: 'dd/MM/yyyy'}}</p>
+                    </ion-item>
+                    <ion-item>
+                        <ion-icon name="at" item-left></ion-icon>
+                        <p>{{ item.contact.email }}</p>
+                      </ion-item>
+              </ion-card-content>
 
-    <ion-card-header>
-      <h1>{{ item.contact.name }}</h1>
-    </ion-card-header>
+              
+            <ion-row text-center>
+                <ion-col>
+                  <button ion-button icon-left clear small (click)="editContact(item)">
+                    <ion-icon name="create"></ion-icon>
+                    <div>Editar</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                   <button ion-button icon-left clear small (click)="removeContact(item)">
+                    <ion-icon name="trash"></ion-icon>
+                    <div>Excluir</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                    <a href="tel;{{ item.contact.phone }}" ion-button icon-left clear small (click)="removeContact(item)">
+                    <ion-icon name="call"></ion-icon>
+                    <div>Ligar</div>
+                  </a>
+                </ion-col>
+            </ion-row>
 
-    <ion-card-content>
-      <p>{{ item.contact.phone }} - {{ item.contact.birth | date: 'dd/MM/yyyy'}}</p>
-    </ion-card-content>
 
-    <ion-row text-center>
-      <ion-col>
-        <button ion-button icon-left clear small (click)="editContact(item)">
-          <ion-icon name="create"></ion-icon>
-          <div>Editar</div>
-        </button>
-      </ion-col>
-      <ion-col>
-         <button ion-button icon-left clear small (click)="removeContact(item)">
-          <ion-icon name="trash"></ion-icon>
-          <div>Excluir</div>
-        </button>
-      </ion-col>
-      <ion-col>
-          <a href="tel;{{ item.contact.phone }}" ion-button icon-left clear small (click)="removeContact(item)">
-          <ion-icon name="call"></ion-icon>
-          <div>Ligar</div>
-        </a>
-      </ion-col>
-    </ion-row>
-
-   </ion-card>
- </ion-list>
-
-<ion-fab right bottom>
-  <button ion-fab color="primary" (click)="addContact()">
-          <ion-icon name="add"></ion-icon>
-  </button>
-</ion-fab>
-
-</ion-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+     </ion-content>
+  
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="addContact()">
+            <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+  
+  
+  
+  
