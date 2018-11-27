@@ -4,9 +4,14 @@
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
-    "src": "assets/imgs/logo.png",
-    "sizes": "512x512",
-    "type": "image/png"
+    "src": "/img/android-chrome-192x192.png",
+    "type": "img/png",
+    "sizes": "192x192"
+  },
+  {
+    "src": "/img/android-chrome-256x256.png",
+    "type": "img/png",
+    "sizes": "256x256"
   }],
   "background_color": "#4e8ef7",
   "theme_color": "#4e8ef7"
