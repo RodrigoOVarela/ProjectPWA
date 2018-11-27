@@ -23,14 +23,21 @@ export class EditContactPage {
  }
 
  save(){
-    this.saveContact()
-      .then(() => {
-        this.toast.create({ message: 'Contato Salvo.', duration: 3000, position: 'botton' }).present();
-        this.navCtrl.pop();
-      })
-      .catch(() => {
-        this.toast.create({ message: 'Erro ao Salvar o Contato.', duration: 3000, position: 'botton' }).present();
-      })
+    if(this.model.name !== "" && 
+       this.model.phone !== null &&
+       this.model.email !== "" &&
+       this.model.birth !== null){
+      this.saveContact()
+        .then(() => {
+          this.toast.create({ message: 'Contato Salvo.', duration: 3000, position: 'botton' }).present();
+          this.navCtrl.pop();
+        })
+        .catch(() => {
+          this.toast.create({ message: 'Erro ao Salvar o Contato.', duration: 3000, position: 'botton' }).present();
+        })
+    } else {
+      this.toast.create({ message: 'Favor preencher todos os campos!', duration: 3000, position: 'botton'}).present();
+    }
  }
 
  private saveContact(){

@@ -43,10 +43,10 @@ export class ContactProvider {
 }
 
 export class Contact{
-  name: string;
-  email: string;
-  phone: number;
-  birth: Date;
+  name: string = "";
+  email: string = "";
+  phone: number = null;
+  birth: Date = null;
   active: boolean;
 }
 
