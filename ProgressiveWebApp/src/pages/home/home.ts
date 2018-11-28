@@ -13,16 +13,7 @@ export class HomePage {
 
   constructor(public navCtrl: NavController, private contactProvider: ContactProvider, 
     private toast: ToastController, private network: Network, private alertCtrl: AlertController) {
-
-    this.network.onConnect().subscribe(()=>{
-      this.alertCtrl.create({
-        title: 'Alerta',
-        subTitle: 'Dispositivo conectado',
-        buttons: ['OK']
-      }).present();
-    });
-
-    this.network.onDisconnect().subscribe(()=>{
+      this.network.onDisconnect().subscribe(()=>{
       this.alertCtrl.create({
         title: 'Alerta',
         subTitle: 'Dispositivo sem conexão com internet',
