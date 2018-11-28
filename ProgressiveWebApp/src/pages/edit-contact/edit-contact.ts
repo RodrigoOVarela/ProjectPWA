@@ -23,9 +23,10 @@ export class EditContactPage {
  }
 
  save(){
-    if(this.model.name !== "" && 
+    if(this.model.name !== "" &&
+       this.model.lastName !== "" && 
        this.model.phone !== null &&
-       this.model.email !== "" &&
+       this.model.email !== "" && 
        this.model.birth !== null){
       this.saveContact()
         .then(() => {

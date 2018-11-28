@@ -3,7 +3,7 @@
     <ion-toolbar color="primary">
   <ion-navbar>
     <ion-title>
-      Progressive Web App Example
+      Agenda Progressive Web App
     </ion-title>
   </ion-navbar>
     </ion-toolbar>
@@ -27,6 +27,14 @@
       </ion-item>
       <ion-item>
         <ion-input type="text" name="name" [(ngModel)]="model.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="contact" item-left></ion-icon>
+        <p>Sobrenome</p>
+      </ion-item>
+      <ion-item>
+        <ion-input type="text" name="lastName" [(ngModel)]="model.lastName"></ion-input>
       </ion-item>
   
       <ion-item>

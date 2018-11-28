@@ -44,6 +44,7 @@ export class ContactProvider {
 
 export class Contact{
   name: string = "";
+  lastName: string = "";
   email: string = "";
   phone: number = null;
   birth: Date = null;
