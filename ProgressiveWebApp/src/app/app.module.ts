@@ -10,6 +10,7 @@ import { ContactProvider } from '../providers/contact/contact';
 import { DatePipe } from '@angular/common';
 import { IonicStorageModule } from '@ionic/storage';
 import { Network } from '@ionic-native/network';
+import { PhonegapLocalNotification } from '@ionic-native/phonegap-local-notification';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { Network } from '@ionic-native/network';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ContactProvider,
     DatePipe,
-    Network
+    Network,
+    PhonegapLocalNotification
   ]
 })
 export class AppModule {}
